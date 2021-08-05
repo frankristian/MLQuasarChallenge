@@ -1,0 +1,29 @@
+{
+  "Satellites": [
+    {
+      
+      
+      "Name": "kenobi",
+      "Position": {
+        "X": -500,
+        "Y": -200
+      }
+    },
+    {
+      
+      "Name": "Skywalker",
+      "Position": {
+        "X": 100,
+        "Y": -100
+      }
+    },
+    {
+      
+      "Name": "Sato",
+      "Position": {
+        "X": 500,
+        "Y": 100
+      }
+    }
+  ]
+}
