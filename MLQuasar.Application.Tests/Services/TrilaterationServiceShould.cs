@@ -20,10 +20,14 @@ namespace MLQuasar.Application.Tests.Services
                 
                
                 double[] d1 = { 100.0, 115.5, 142.7};
-                Point p1 = new Point { X = -399.7859125000032, Y = 2782.0142249999917 };
+                Point p1 = new Point { X = -487.28591250000136, Y = 1557.014224999999 };
+                
                 //<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                double[] d2 = { 223.60679775, 447.2135955, 894.427191 };
+                Point p2 = new Point { X = -299.999999999965, Y = -300.0000000003529 };
 
                 data.Add(d1, p1);
+                data.Add(d2, p2);
                 return data;
             }
         }
@@ -39,7 +43,7 @@ namespace MLQuasar.Application.Tests.Services
         {
             [Theory]
             [MemberData(nameof(Data))]
-            public void Return_Point_given_certain_params(double[] distances, double expected)
+            public void Return_Point_given_certain_params(double[] distances, Point expected)
             {
                 //arrange
                 var points = new List<Point> {

@@ -48,12 +48,13 @@ namespace MLQuasar.Application.Services
         private double GetDistance(Point point1, Point point2)
         {
             //d^2 = (p1[0] - p2[0])^2 + (p1[1] - p2[1]);
-            double distSquared = Math.Pow((point1.X - point2.X), 2) + Math.Pow((point1.X - point2.X), 2);
+            double distSquared = Math.Pow((point1.X - point2.X), 2) + Math.Pow((point1.Y - point2.Y), 2);
             return Math.Sqrt(distSquared);
         }
 
         private Vector<double> GetVectorb(Point[] points, double[] distances)
         {
+
             //Declare elements of b vector
             //bBA = 1/2 * (rA^2 - rB^2 + dBA^2)
             double[] b = { 0, 0 };
