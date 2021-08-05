@@ -53,9 +53,9 @@ namespace MLQuasar.Application.Tests.Services
                 //arrange
                 
                 //act
-                var actual = Sut.GetMessage(SatellitesMock);
+                var result = Sut.GetMessage(SatellitesMock);
                 //assert
-                actual.Should().BeEquivalentTo(ImperialShipCarrierResponseMock.Message);
+                result.Should().BeEquivalentTo(ImperialShipCarrierResponseMock.Message);
             }
         }
 
@@ -72,7 +72,7 @@ namespace MLQuasar.Application.Tests.Services
                 List<double> distances = new List<double>();
                 SatellitesMock.ForEach(x => distances.Add((double) x.Radio));
                 //act
-                var actual = Sut.GetLocation(SatellitesMock);
+                var result = Sut.GetLocation(SatellitesMock);
 
                 //assert            
                 Mock.Get(TrilaterationMock).Verify(t => t.TrilateratePosition(

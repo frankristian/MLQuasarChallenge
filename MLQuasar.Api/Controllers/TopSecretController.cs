@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MLQuasar.Application.Services.Interfaces;
 using MLQuasar.Domain.Queries;
-using MLQuasar.Domain.Responses;
 
 namespace MLQuasar.Api.Controllers
 {
@@ -21,6 +20,13 @@ namespace MLQuasar.Api.Controllers
             _communicationService = communicationService ??
                 throw new ArgumentNullException(nameof(communicationService)); ;
         }
+        /// <summary>
+        /// Permite obtener el posicionamiento de la nave Imperial y decodificación del mensaje a partir
+        /// de los parámetros ingresados.
+        /// </summary>
+        /// <param name="query">Payload con información de la distancia a cada satélite 
+        /// y mensaje a decodificar.</param>
+        /// <returns>ImperialShipCarrierResponse</returns>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] TopSecretQuery query)
         {
@@ -41,25 +47,5 @@ namespace MLQuasar.Api.Controllers
 
         }
 
-        //[HttpPost]
-        //public IActionResult Post([FromBody] TopSecretQuery query)
-        //{
-        //    ImperialShipCarrierResponse result;
-
-        //    try
-        //    {
-        //        var satellites = _satelliteService.GetSatellitesFromQuery(query);
-        //        result = query == null
-        //            ? throw new ArgumentNullException(nameof(query))
-        //            : _communicationService.ResolveCommunication(satellites);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //_logger.LogError(ex.Message);
-        //        var data = new { Message = "No se puede determinar la información solicitada --> " + ex.Message };
-        //        return new NotFoundObjectResult(data);
-        //    }
-        //    return Ok(result);
-        //}
     }
 }

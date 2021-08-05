@@ -153,10 +153,10 @@ namespace MLQuasar.Api.Tests.Controllers
                 //arrange
 
                 //act
-                Action actual = () => Sut.Post(name, queryMock);
+                Action result = () => Sut.Post(name, queryMock);
 
                 //Assert
-                actual.Should().Throw<ArgumentNullException>();
+                result.Should().Throw<ArgumentNullException>();
                 
 
             }

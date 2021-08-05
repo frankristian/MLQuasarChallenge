@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MLQuasar.Application.Services.Interfaces;
 using MLQuasar.Domain.Queries;
-using MLQuasar.Infrastructure;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MLQuasar.Api.Controllers
@@ -23,7 +22,12 @@ namespace MLQuasar.Api.Controllers
             _communicationService = communicationService ??
                 throw new ArgumentNullException(nameof(communicationService)); ;
         }
-        // GET api/<TopSecret_SplitController>
+        /// <summary>
+        /// Permite obtener el posicionamiento de la nave Imperial y decodificación del mensaje a partir
+        /// de los datos guardados previamente para cada satélite mediante método POST.
+        /// </summary>
+        /// <returns>ImperialShipCarrierResponse</returns>
+        // GET api/
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -38,9 +42,13 @@ namespace MLQuasar.Api.Controllers
                 return new NotFoundObjectResult(data);
             }
 
-            //return model;
         }
-
+        /// <summary>
+        /// Permite guardar la información de distancia y mensaje para un satélite en particular
+        /// </summary>
+        /// <param name="satellite_name">Nombre del satélite al cual le vamos a resultizar la información --> (kenobi, skywalker y sato)</param>
+        /// <param name="satellite">Payload con los datos distancia y mensaje para resultizar la información guardada</param>
+        /// <returns></returns>
         // POST api/<TopSecret_SplitController>
         [HttpPost("{satellite_name}")]
         public bool Post(string satellite_name, [FromBody] SatelliteQuery satellite)
@@ -61,6 +69,9 @@ namespace MLQuasar.Api.Controllers
             }
 
         }
+        /// <summary>
+        /// Vuelve al estado inicial la información de los satélites kenobi, skywalker y sato
+        /// </summary>
         // DELETE api/
         [HttpDelete]
         public void Delete()

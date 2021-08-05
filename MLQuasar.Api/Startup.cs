@@ -43,12 +43,6 @@ namespace MLQuasar.Api
                     Title = $"MLQuasar {groupName}",
                     Version = groupName,
                     Description = "MLQuasar API",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Cristian Fonseca",
-                        Email = "cristianfonsecaparra80@gmail.com"
-                        
-                    }
                 });
             });
         }

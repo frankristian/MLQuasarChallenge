@@ -1,0 +1,40 @@
+swagger: "2.0"
+info:
+  title: MLQuasar v1
+  description: MLQuasar API
+  version: v1
+host: mlquasarapi.appspot.com
+paths:
+  /api/TopSecret:
+    post:
+      tags:
+        - TopSecret
+      responses:
+        '200':
+          description: Success
+  /api/TopSecret_Split:
+    get:
+      tags:
+        - TopSecret_Split
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - TopSecret_Split
+      responses:
+        '200':
+          description: Success
+  '/api/TopSecret_Split/{satellite_name}':
+    post:
+      tags:
+        - TopSecret_Split
+      parameters:
+        - name: satellite_name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+         

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MLQuasar.Domain.Extensions
 {
@@ -10,17 +9,19 @@ namespace MLQuasar.Domain.Extensions
         public static List<string> MergeLists(this List<string> me, List<string> second)
         {
             if (me.Count != second.Count)
-                throw new ApplicationException("Ambas listas deben tener la misma cantidad de elementos");
+            {
+                throw new ArgumentOutOfRangeException("Ambas listas deben tener la misma cantidad de elementos");
+            }
 
             List<string> lResult = new List<string>();
-            foreach (var item in me.Select((value, i) => (value, i)))
+            foreach ((string value, int i) item in me.Select((value, i) => (value, i)))
             {
                 //verifico igualdad de valores
                 if (!string.IsNullOrEmpty(item.value) && !string.IsNullOrEmpty(second[item.i])
                     && item.value != second[item.i])
                 {
                     lResult = null;
-                    throw new ApplicationException("Ambos valores deben ser iguales si ambos tienen valor");
+                    throw new ArgumentException("Ambos elementos deben ser iguales si ambos tienen valor asignado");
                 }
                 if (!string.IsNullOrEmpty(item.value.Trim()))
                 {

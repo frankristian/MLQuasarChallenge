@@ -92,27 +92,27 @@ namespace MLQuasar.Application.Tests.Services
             {
                 //arrange
                 //act
-                var actual = await Sut.ResolveCommunicationAsync(SatellitesMock);
+                var result = await Sut.ResolveCommunicationAsync(SatellitesMock);
                 //assert
-                actual.Should().BeOfType<ImperialShipCarrierResponse>();
+                result.Should().BeOfType<ImperialShipCarrierResponse>();
             }
             [Fact]
             public async Task Invoke_GetLocation_from_DecoderService()
             {
                 //arrange
                 //act
-                var actual = await Sut.ResolveCommunicationAsync(SatellitesMock);
+                var result = await Sut.ResolveCommunicationAsync(SatellitesMock);
                 //assert
                 Mock.Get(DecoderService).
                     Verify(d => d.GetLocation(SatellitesMock), Times.Once);
-                //actual.Should().BeOfType<ImperialShipCarrierResponse>();
+                
             }
              [Fact]
             public async Task Invoke_GetMessage_from_DecoderService()
             {
                 //arrange
                 //act
-                var actual = await Sut.ResolveCommunicationAsync(SatellitesMock);
+                var result = await Sut.ResolveCommunicationAsync(SatellitesMock);
                 //assert
                 Mock.Get(DecoderService).
                     Verify(d => d.GetMessage(SatellitesMock), Times.Once);
@@ -132,9 +132,9 @@ namespace MLQuasar.Application.Tests.Services
                     .Setup(d => d.GetMessage(SatellitesMock))
                     .Returns("este es un mensaje secreto");
                 //act
-                var actual = await Sut.ResolveCommunicationAsync(SatellitesMock);
+                var result = await Sut.ResolveCommunicationAsync(SatellitesMock);
                 //assert
-                actual.Should().BeEquivalentTo(ImperialShipCarrierResponseMock);
+                result.Should().BeEquivalentTo(ImperialShipCarrierResponseMock);
 
             }
         }

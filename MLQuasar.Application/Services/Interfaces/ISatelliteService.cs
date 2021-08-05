@@ -9,7 +9,6 @@ namespace MLQuasar.Application.Services.Interfaces
         void UpdateSatellite(SatelliteQuery query);
         Satellite[] GetAll();
         void ResetSatellites();
-        // Task<Satellite[]> GetSatellitesFromQuery(TopSecretQuery topSecretQuery);
         Satellite[] GetSatellitesFromQuery(TopSecretQuery topSecretQuery);
     }
 }
