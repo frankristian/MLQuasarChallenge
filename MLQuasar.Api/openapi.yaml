@@ -9,6 +9,7 @@ paths:
     post:
       tags:
         - TopSecret
+      operationId: TopSecretPost 
       responses:
         '200':
           description: Success
@@ -16,12 +17,14 @@ paths:
     get:
       tags:
         - TopSecret_Split
+      operationId: TopSecret_SplitGet
       responses:
         '200':
           description: Success
     delete:
       tags:
         - TopSecret_Split
+      operationId: TopSecret_SplitDelete
       responses:
         '200':
           description: Success
@@ -29,6 +32,7 @@ paths:
     post:
       tags:
         - TopSecret_Split
+      operationId: TopSecret_SplitPost
       parameters:
         - name: satellite_name
           in: path
@@ -37,4 +41,3 @@ paths:
       responses:
         '200':
           description: Success
-         

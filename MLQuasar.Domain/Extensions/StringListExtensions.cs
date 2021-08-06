@@ -10,7 +10,7 @@ namespace MLQuasar.Domain.Extensions
         {
             if (me.Count != second.Count)
             {
-                throw new ArgumentOutOfRangeException("Ambas listas deben tener la misma cantidad de elementos");
+                throw new ArgumentOutOfRangeException("Las listas deben tener la misma cantidad de elementos");
             }
 
             List<string> lResult = new List<string>();
@@ -21,7 +21,7 @@ namespace MLQuasar.Domain.Extensions
                     && item.value != second[item.i])
                 {
                     lResult = null;
-                    throw new ArgumentException("Ambos elementos deben ser iguales si ambos tienen valor asignado");
+                    throw new ArgumentException("Los elementos deben ser iguales si ambos tienen valor asignado");
                 }
                 if (!string.IsNullOrEmpty(item.value.Trim()))
                 {
