@@ -43,5 +43,6 @@ Las capas de la misma son las siguientes:
  2. **Api Controllers**: Recibe las peticiones HTTP y delega la responsabilidad de la mediante inyección de dependencias en los servicios otorgados por la capa de Aplicación.
  3. **Application**: Aquí se encuentran los servicios que resuelven la lógica de la aplicación y a su vez manipula entidades del Dominio a través de la capa de Infrastructure.  
  4. **Domain**: Maneja estado de las entidades del dominio. Además se agregan funcionalidades a través de extensiones a dichas entidades. Aquí también podemos encontrar las entidades de tipo Dto que representan los objetos del Request y Response respectivamente.
+ 
 ![CleanArquitecture](https://github.com/frankristian/MLQuasarChallenge/blob/master/docs/img/CleanArquitecture.PNG?raw=true)
 
