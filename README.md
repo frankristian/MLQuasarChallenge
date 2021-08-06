@@ -1,6 +1,6 @@
 # MLQuasarApi
 
-Servicio MLQuasarApi  es un servicio RestAPI que retorna la posición de la de un punto y la decodificación del mensaje a través del cálculo de un punto mediante Trilateración. Se deja el link al concepto matemático del mismo [Trilateración de un punto](https://es.wikipedia.org/wiki/Trilateraci%C3%B3n).
+Servicio MLQuasarApi  es un servicio RestAPI desarrollado en **.NetCore 3.1** que retorna la posición de la de un punto y la decodificación del mensaje a través del cálculo de un punto mediante Trilateración. Se deja el link al concepto matemático del mismo [Trilateración de un punto](https://es.wikipedia.org/wiki/Trilateraci%C3%B3n).
 **Consideraciones especiales del funcionamiento:**
 
  - Las posiciones de los 3 puntos están configuradas dentro del archivo \MLQuasar.Infrastucture\DBJson\dbQuasar.json
