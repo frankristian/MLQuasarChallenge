@@ -32,3 +32,16 @@ El servicio cuenta con 2 endpoints  los cuales detallamos más abajo cómo funci
 
 ## Aclaración funcional
 Si no se han realizado al menos 3 llamadas *Post* al método /api/topsecret_split/{name} para actualizar los datos (distancias y mensajes) de los 3 puntos, puede que el servicio retorne un error de información insuficiente cuando se realice una llamada al método *Get*
+
+# Descripción de la arquitectura
+
+Se optó por utilizar arquitectura basada en la definición de Robert Martin [Clean Arquitecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). Es arquitectura también se la conoce como Cebolla o Hexagonal. 
+Las dependencias van desde afuera hacia adentro.
+
+Las capas de la misma son las siguientes:
+ 1. **Infrastructure**: Se utiliza el patrón Repository para retornar entidades de Dominio desde la fuente de datos (en nuestro caso, un archivo Json).
+ 2. **Api Controllers**: Recibe las peticiones HTTP y delega la responsabilidad de la mediante inyección de dependencias en los servicios otorgados por la capa de Aplicación.
+ 3. **Application**: Aquí se encuentran los servicios que resuelven la lógica de la aplicación y a su vez manipula entidades del Dominio a través de la capa de Infrastructure.  
+ 4. **Domain**: Maneja estado de las entidades del dominio. Además se agregan funcionalidades a través de extensiones a dichas entidades. Aquí también podemos encontrar las entidades de tipo Dto que representan los objetos del Request y Response respectivamente.
+![CleanArquitecture](https://github.com/frankristian/MLQuasarChallenge/blob/master/docs/img/CleanArquitecture.PNG?raw=true)
+
