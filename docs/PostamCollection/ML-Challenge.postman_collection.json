@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "2da1fffb-eed7-42f2-9b40-e1dd0c839b0a",
+		"name": "ML-Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TopSecret",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"satellites\": [\r\n    {\r\n        \"name\": \"kenobi\",\r\n        \"distance\": 100,\r\n        \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\r\n    },\r\n    {\r\n        \"name\": \"skywalker\",\r\n        \"distance\": 115.5,\r\n        \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\r\n    },\r\n    {\r\n        \"name\": \"sato\",\r\n        \"distance\": 142.7,\r\n        \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\r\n    }\r\n]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mlquasarapi.uc.r.appspot.com/api/TopSecret",
+					"protocol": "https",
+					"host": [
+						"mlquasarapi",
+						"uc",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"TopSecret"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TopSecret_Split-GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mlquasarapi.uc.r.appspot.com/api/TopSecret_Split",
+					"protocol": "https",
+					"host": [
+						"mlquasarapi",
+						"uc",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"TopSecret_Split"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TopSecret_Split-POST-1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"distance\": 142.7,\r\n\"message\": [\"este\", \"\", \"un\", \"\", \"secreto\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mlquasarapi.uc.r.appspot.com/api/TopSecret_Split/kenobi",
+					"protocol": "https",
+					"host": [
+						"mlquasarapi",
+						"uc",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"TopSecret_Split",
+						"kenobi"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
