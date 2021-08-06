@@ -27,22 +27,35 @@ El servicio cuenta con 2 endpoints  los cuales detallamos más abajo cómo funci
 ![Post Parcial](https://github.com/frankristian/MLQuasarChallenge/blob/master/docs/img/Post2.PNG?raw=true)
 			 - ***Get***: realiza la misma acción que el post del endpoint /api/TopSecret con la diferencia que consulta los datos guardados mediando las diferentes llamadas al post anterior. 
 			- Ejemplo: /api/topsecret_split
-		- ***Delete***: Verbo que se utiliza para resetear los datos almacenados.
+			- ***Delete***: Verbo que se utiliza para resetear los datos almacenados.
 			- Ejemplo: /api/topsecret_split
+## Archivos de prueba
 
-## Aclaración funcional
-Si no se han realizado al menos 3 llamadas *Post* al método /api/topsecret_split/{name} para actualizar los datos (distancias y mensajes) de los 3 puntos, puede que el servicio retorne un error de información insuficiente cuando se realice una llamada al método *Get*
+ - Dentro de la carpeta [/docs/PostmanCollection/](MLQuasarChallenge/docs/PostamCollection/) podemos encontrar el archivo Json con casos de test de aceptación para probar el servicio. Esto puede ser testeado mediante la herramienta **Postman**
+
+## Aclaraciones funcionales
+
+ - Los tamaños de los arrays de mensajes deben ser todos de la misma longitud.
+ - Si no se han realizado al menos 3 llamadas *Post* al método /api/topsecret_split/{name} para actualizar los datos (distancias y mensajes) de los 3 puntos, puede que el servicio retorne un error de información insuficiente cuando se realice una llamada al método *Get*
 
 # Descripción de la arquitectura
 
 Se optó por utilizar arquitectura basada en la definición de Robert Martin [Clean Arquitecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). Es arquitectura también se la conoce como Cebolla o Hexagonal. 
-Las dependencias van desde afuera hacia adentro.
 
-Las capas de la misma son las siguientes:
- 1. **Infrastructure**: Se utiliza el patrón Repository para retornar entidades de Dominio desde la fuente de datos (en nuestro caso, un archivo Json).
- 2. **Api Controllers**: Recibe las peticiones HTTP y delega la responsabilidad de la mediante inyección de dependencias en los servicios otorgados por la capa de Aplicación.
- 3. **Application**: Aquí se encuentran los servicios que resuelven la lógica de la aplicación y a su vez manipula entidades del Dominio a través de la capa de Infrastructure.  
- 4. **Domain**: Maneja estado de las entidades del dominio. Además se agregan funcionalidades a través de extensiones a dichas entidades. Aquí también podemos encontrar las entidades de tipo Dto que representan los objetos del Request y Response respectivamente.
- 
-![CleanArquitecture](https://github.com/frankristian/MLQuasarChallenge/blob/master/docs/img/CleanArquitecture.PNG?raw=true)
+Las capas de la arquitectura planteada son las siguientes:
+ 1. **Api Controllers**: Recibe las peticiones HTTP y delega la responsabilidad de la mediante inyección de dependencias en los servicios otorgados por la capa de Aplicación.
+ 2. **Application**: Aquí se encuentran los servicios que resuelven la lógica de la aplicación y a su vez manipula entidades del Dominio para obtener y setear información.
+ 3. **Domain**: Maneja estado de las entidades del dominio. Además se agregan funcionalidades a través de extensiones a dichas entidades. Aquí también podemos encontrar las entidades de tipo Dto que representan los objetos del Request y Response respectivamente.
+ 4.  **Infrastructure**: Se utiliza el patrón Repository para retornar entidades de Dominio desde la fuente de datos (en nuestro caso, un archivo Json).
 
+> Nota: Queda fuera del scope de este proyecto el manejo de excepciones custom. Se utilizan las Excepciones definidas en el framework de .Net.
+
+## Diagrama de arquitectura
+![Diagrama de la arqiutectura](https://github.com/frankristian/MLQuasarChallenge/blob/master/docs/img/ArquitectureDiagram.png?raw=true)
+
+## Detalles adicionales
+
+ - Se realizaron pruebas unitarias utilizando las librerías XUnit, Moq y FluentAssertion
+
+# Deploy del servicio
+El servicio se desplegó en y habilitó en Google Cloud Platform y se puede acceder en la siguiente url https://mlquasarapi.uc.r.appspot.com
