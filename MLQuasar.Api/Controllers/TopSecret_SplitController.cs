@@ -51,7 +51,7 @@ namespace MLQuasar.Api.Controllers
         /// <returns></returns>
         // POST api/<TopSecret_SplitController>
         [HttpPost("{satellite_name}")]
-        public bool Post(string satellite_name, [FromBody] SatelliteQuery satellite)
+        public async Task<IActionResult> Post(string satellite_name, [FromBody] SatelliteQuery satellite)
         {
             try
             {
@@ -59,13 +59,14 @@ namespace MLQuasar.Api.Controllers
                     ? satellite_name : throw new ArgumentNullException(nameof(satellite_name));
                 _satelliteService.UpdateSatellite(satellite);
                
-                return true;
-                
+                return Ok(true);
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                var data = new { Message = "Error en la solicitud: --> " + ex.Message };
+                return new NotFoundObjectResult(data);
             }
 
         }

@@ -40,7 +40,6 @@ namespace MLQuasar.Api.Controllers
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex.Message);
                 var data = new { Message = "No se puede determinar la información solicitada --> " + ex.Message };
                 return new NotFoundObjectResult(data);
             }
