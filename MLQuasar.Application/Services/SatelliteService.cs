@@ -3,10 +3,8 @@ using MLQuasar.Domain.Queries;
 using MLQuasar.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using MLQuasar.Domain.Entities;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MLQuasar.Application.Services
 {

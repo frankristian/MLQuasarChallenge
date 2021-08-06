@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MLQuasar.Application\MLQuasar.Application.csproj" />
-    <ProjectReference Include="..\MLQuasar.Infrastucture\MLQuasar.Infrastucture.csproj" />
   </ItemGroup>
 
 </Project>
