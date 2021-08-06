@@ -1,5 +1,5 @@
 ﻿using MLQuasar.Domain.Entities;
-using MLQuasar.Domain.Queries;
+using MLQuasar.Domain.Dtos.Queries;
 
 namespace MLQuasar.Application.Services.Interfaces
 {

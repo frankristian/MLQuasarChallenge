@@ -7,7 +7,7 @@ using MLQuasar.Domain.Entities;
 using System.Collections.Generic;
 using Moq;
 using MLQuasar.Application.Services.Interfaces;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Responses;
 
 namespace MLQuasar.Application.Tests.Services
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace MLQuasar.Domain.Queries
+namespace MLQuasar.Domain.Dtos.Queries
 {
     public class SatelliteQuery
     {

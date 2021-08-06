@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MLQuasar.Domain.Queries
+namespace MLQuasar.Domain.Dtos.Queries
 {
     public class TopSecretQuery
     {

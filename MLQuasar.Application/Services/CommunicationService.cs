@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MLQuasar.Application.Services.Interfaces;
 using MLQuasar.Domain.Entities;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Responses;
 
 namespace MLQuasar.Services
 {

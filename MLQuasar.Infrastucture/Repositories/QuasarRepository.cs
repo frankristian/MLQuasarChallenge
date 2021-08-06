@@ -1,8 +1,7 @@
 ﻿
 using MLQuasar.Domain.Entities;
-using System;
+using MLQuasar.Domain.Repositories;
 using System.Linq;
-using System.Threading.Tasks;
 
 
 namespace MLQuasar.Infrastructure.Repositories

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MLQuasar.Application.Services;
 using MLQuasar.Application.Services.Interfaces;
+using MLQuasar.Domain.Repositories;
 using MLQuasar.Infrastructure;
 using MLQuasar.Infrastructure.Repositories;
 using MLQuasar.Services;

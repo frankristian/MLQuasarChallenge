@@ -1,10 +1,10 @@
 ﻿using MLQuasar.Application.Services.Interfaces;
-using MLQuasar.Domain.Queries;
-using MLQuasar.Infrastructure.Repositories;
+using MLQuasar.Domain.Dtos.Queries;
 using System;
 using System.Collections.Generic;
 using MLQuasar.Domain.Entities;
 using System.Linq;
+using MLQuasar.Domain.Repositories;
 
 namespace MLQuasar.Application.Services
 {

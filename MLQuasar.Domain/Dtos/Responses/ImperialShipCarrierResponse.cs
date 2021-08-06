@@ -1,6 +1,6 @@
 ﻿using MLQuasar.Domain.Entities;
 
-namespace MLQuasar.Domain.Responses
+namespace MLQuasar.Domain.Dtos.Responses
 {
     public class ImperialShipCarrierResponse
     {

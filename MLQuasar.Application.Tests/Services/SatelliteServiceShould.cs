@@ -1,15 +1,14 @@
 ﻿using MLQuasar.Application.Services;
-using MLQuasar.Domain.Queries;
-using MLQuasar.Infrastructure.Repositories;
+using MLQuasar.Domain.Dtos.Queries;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 using FluentAssertions;
 using MLQuasar.Domain.Entities;
 using System.Linq;
 using MLQuasar.Application.Services.Interfaces;
+using MLQuasar.Domain.Repositories;
 
 namespace MLQuasar.Application.Tests.Services
 {

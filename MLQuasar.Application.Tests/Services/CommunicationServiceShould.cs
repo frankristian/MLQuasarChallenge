@@ -7,7 +7,7 @@ using FluentAssertions;
 using System;
 using Xunit;
 using System.Collections.Generic;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Responses;
 
 namespace MLQuasar.Application.Tests.Services
 {

@@ -10,8 +10,8 @@ using Xunit;
 using MLQuasar.Api.Controllers;
 using MLQuasar.Application.Services.Interfaces;
 using MLQuasar.Domain.Entities;
-using MLQuasar.Domain.Queries;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Queries;
+using MLQuasar.Domain.Dtos.Responses;
 
 namespace MLQuasar.Api.Tests.Controllers
 {
@@ -125,12 +125,7 @@ namespace MLQuasar.Api.Tests.Controllers
         }
         public class TheMethodPostShould : TopSecret_SplitControllerShould
         {
-            SatelliteQuery queryMock = new SatelliteQuery { Name = "kenobi", Distance = 1.1, Message = new List<string> { "este", "", "", "mensaje", "" } };
-                        //new SatelliteQuery { Name = "skywalker", Distance = 0.1, Message = new List<string> { "", "es", "", "", "secreto" } },
-                        //new SatelliteQuery { Name = "sato", Distance = 0.9, Message = new List<string> { "este", "", "un", "", "" } }
-                
-            
-
+            readonly SatelliteQuery queryMock = new SatelliteQuery { Name = "kenobi", Distance = 1.1, Message = new List<string> { "este", "", "", "mensaje", "" } };
            
             [Fact]
             public void Invoke_UpdateSatellite()

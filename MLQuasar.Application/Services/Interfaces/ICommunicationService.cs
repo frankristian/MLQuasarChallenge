@@ -1,6 +1,6 @@
 ﻿
 using MLQuasar.Domain.Entities;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Responses;
 using System.Threading.Tasks;
 
 namespace MLQuasar.Application.Services.Interfaces

@@ -10,8 +10,8 @@ using Xunit;
 using MLQuasar.Api.Controllers;
 using MLQuasar.Application.Services.Interfaces;
 using MLQuasar.Domain.Entities;
-using MLQuasar.Domain.Queries;
-using MLQuasar.Domain.Responses;
+using MLQuasar.Domain.Dtos.Queries;
+using MLQuasar.Domain.Dtos.Responses;
 
 namespace MLQuasar.Api.Tests.Controllers
 {
@@ -52,7 +52,7 @@ namespace MLQuasar.Api.Tests.Controllers
 
         public class TheMethodPostShould : TopSecretControllerShould
         {
-            private TopSecretQuery queryMock = new TopSecretQuery()
+            private readonly TopSecretQuery queryMock = new TopSecretQuery()
             {
                 Satellites = new List<SatelliteQuery>(){
                         new SatelliteQuery { Name = "kenobi", Distance = 1.1, Message = new List<string> { "este", "", "", "mensaje", "" } },

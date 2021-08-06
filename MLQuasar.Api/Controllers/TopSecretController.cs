@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MLQuasar.Application.Services.Interfaces;
-using MLQuasar.Domain.Queries;
+using MLQuasar.Domain.Dtos.Queries;
 
 namespace MLQuasar.Api.Controllers
 {

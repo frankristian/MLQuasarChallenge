@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MLQuasar.Application.Services.Interfaces;
-using MLQuasar.Domain.Queries;
+using MLQuasar.Domain.Dtos.Queries;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MLQuasar.Api.Controllers

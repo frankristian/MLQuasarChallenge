@@ -1,8 +1,7 @@
 ﻿using MLQuasar.Domain.Entities;
 using System;
-using System.Threading.Tasks;
 
-namespace MLQuasar.Infrastructure.Repositories
+namespace MLQuasar.Domain.Repositories
 {
     public interface IQuasarRepository
     {
